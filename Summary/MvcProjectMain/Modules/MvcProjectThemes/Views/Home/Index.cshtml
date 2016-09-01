@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<h2>当前：http://www.site1.dev/</h2>
+
+<a href="http://www.main.dev/Home/Index">www.main.dev站点</a>
+<ol>
+    <li>@Html.Partial("_HtmlPartial", "Html.Partial")</li>
+    <li>@{Html.RenderPartial("_HtmlPartial", "Html.RenderPartial");}</li>
+    <li>@{Html.RenderAction("TestPartial", new { str = "Html.RenderAction" });}</li>
+    @{
+        bool isShowPartial = true;
+        if (isShowPartial)
+        {
+            <li>
+                @Html.Action("TestPartial", new { str = "Html.Action" })
+            </li>
+        }
+    }
+</ol>
+
+
